@@ -1,0 +1,23 @@
+$turquiose: #44ddd0;
+$green: #27d7a1;
+$light-green: #45f69e;
+$dark-green: rgb(0, 100, 80);
+$light: #f8f8f8;
+
+// Update bulma variables
+$primary: $green;
+$link: $light-green;
+
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+// global style
+html {
+  background: linear-gradient(to right top, $turquiose, $green);
+}
+
+html,
+body {
+  height: 100%;
+}
