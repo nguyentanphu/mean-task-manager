@@ -5,6 +5,11 @@ const { mongoose } = require('./db/mongoose')
 // Load mongoose models
 const { List, Task } = require('./db/models')
 
+app.use(function (req, res, next) {
+	res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	next();
+});
 app.use(express.json())
 
 app.get('/lists', async (req, res) => {
@@ -66,8 +71,8 @@ app.patch('/lists/:listId/tasks/:taskId', async (req, res) => {
 		_id: taskId,
 		_listId: listId
 	}, {
-		$set: req.body
-	})
+			$set: req.body
+		})
 
 	res.sendStatus(200)
 })
